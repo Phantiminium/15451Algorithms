@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+
+int main(int argc, char **argv) {
+  int i, n, m, seed;
+
+  //scanf("%d %d %d", &n, &m, &seed);
+  n = atoi(argv[1]);
+  m = atoi(argv[2]);
+  seed = atoi(argv[3]);
+
+  //printf("\n");
+  srand(seed);
+
+  printf("%d %d ", n, m);
+
+  for (i = 0; i < m; i++) {
+    if (rand() % 2 == 0) {
+      printf("IR %d %d %d ", rand() % n, rand() % n, (rand() % 2000) - 1000);
+    }
+    else {
+      printf("RM %d %d ", rand() % n, rand() % n);
+    }
+  }
+
+  printf("\n");
+
+  return 0;
+}
